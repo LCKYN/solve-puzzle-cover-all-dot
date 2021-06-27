@@ -1,24 +1,36 @@
-node = 6
-ga = {i:set() for i in range(6)}
+node = 16
+last = 13
+ga = {i:list() for i in range(node)}
 
-ga[0] = {1}
-ga[1] = {0,4,2}
-ga[2] = {1,3}
-ga[3] = {2,4}
-ga[4] = {1,3,5}
-ga[5] = {}
+temp = [[1],
+        [2,5],
+        [1,3,6],
+        [2,7,4],
+        [3,8],
+        [1,6,9],
+        [2,5,7,10],
+        [3,6,8,11],
+        [4,7,12],
+        [5,10,14],
+        [6,9,11,15],
+        [7,10,12],
+        [8,11],
+        [14],
+        [9,13,15],
+        [10,14]]
+
+for i in range(node):
+    ga[i] = temp[i]
 
 res = list()
 
 def backtracking(path):
-    if(len(path) == node):
+    if(len(path) == node and path[-1] == last):
         res.append(path)
     else:
         for adj in ga[path[-1]]:
             if(not adj in path):
                 backtracking(path + [adj])
-            # else:
-            #     print(f"reject : next {adj} from {path}")
 
 backtracking([0])
 
