@@ -98,4 +98,4 @@ while True: # main game loop
 
     fcount += 1
     pygame.display.update()
-    time.sleep(0.01)
+    time.sleep(0.002)

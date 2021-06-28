@@ -35,7 +35,7 @@ def backtracking(path):
 backtracking([0])
 
 if(res):
-    print("Found it {l} solution".format(l = len(res)))
+    print("Found it! \n  {l} solution".format(l = len(res)))
     for i in res:
         print(i)
 else:
